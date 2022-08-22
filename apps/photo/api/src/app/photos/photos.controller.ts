@@ -4,15 +4,11 @@ import { ApiPhoto } from '@nx-photos/photo/api-model';
 
 @Controller('photos')
 export class PhotosController {
-  constructor(private photoService: PhotosService) {
-    console.log('photos ctrl ctor MD')
-  }
+  constructor(private photoService: PhotosService) { }
 
   @Get()
   findAll(): ApiPhoto[] {
-    const res = this.photoService.getPhotos();
-    console.log('getPhotos MD', res);
-    return res
+    return this.photoService.getPhotos();
   }
 
   @Put(':photoId/like')

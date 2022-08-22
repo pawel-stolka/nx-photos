@@ -4,14 +4,10 @@ import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {
-    console.log('app ctrl ctor MD')
-  }
+  constructor(private readonly appService: AppService) { }
   
   @Get()
   getData() {
-    const res = this.appService.getData();
-    console.log('getData MD', res);
-    return res
+    return this.appService.getData();
   }
 }
